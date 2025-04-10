@@ -1,0 +1,71 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="Dashboard.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Andika:ital,wght@0,400;0,700;1,400;1,700&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="css/bootstrap-5.3.5-dist/bootstrap-5.3.5-dist/css/bootstrap.min.css">
+    <title>Dashboard</title>
+</head>
+<body>
+    
+    <div id="sidebar"></div>
+
+    <section>
+        <div class="container">
+            <div class="about">
+                <h3 style="padding-left: 30%;"></h3>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque eveniet a, voluptate temporibus error at vel excepturi labore voluptates, repellendus exercitationem sint, rem nisi in omnis. Labore tenetur nostrum veritatis!
+                </p>
+                <a href="#" class="btn btn-primary">View all</a>
+            </div>
+        </div>
+    </section>
+    <br><br>
+    <section>
+        <div class="container">
+            <div class="about">
+                <table class="w3-table w3-striped w3-border">
+                        <tr>
+                            <th>Username</th>
+                            <th>Seller</th>
+                            <th>Tracking</th>
+                            <th>Amount</th>
+                        </tr>
+                        <tr>
+                            <td>john doe</td>
+                            <td>jane doe</td>
+                            <td>Complete</td>
+                            <td>1,000,000</td>
+                        </tr>
+                        <tr>
+                            <td>Jane doe</td>
+                            <td>lucy doe</td>
+                            <td>pending</td>
+                            <td>5,000,000</td>
+                        </tr>
+                    </table> 
+                <a href="#" class="btn btn-primary">View all</a>
+            </div>
+        </div>
+    </section>
+
+
+    <script type="text/javascript" src="main.js"></script>
+    <script src="js/sidebar.js"></script>
+    <script>
+        fetch('sidebar.html')
+          .then(res => res.text())
+          .then(html => {
+            document.getElementById('sidebar').innerHTML = html;
+          });
+      </script>
+    
+</body>
+</html>

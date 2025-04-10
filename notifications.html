@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notifications</title>
+
+    <link rel="stylesheet" href="css/bootstrap-5.3.5-dist/bootstrap-5.3.5-dist/css/bootstrap.min.css">
+    
+</head>
+<body>
+<div id="sidebar"></div>
+
+
+
+<script>
+  fetch('sidebar.html')
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById('sidebar').innerHTML = html;
+    });
+</script>
+<script src="js/sidebar.js"></script>
+
+</body>
+</html>
