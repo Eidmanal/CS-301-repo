@@ -10,6 +10,8 @@
     
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="css/bootstrap-5.3.5-dist/bootstrap-5.3.5-dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
     <title>Dashboard</title>
 </head>
 <body>
@@ -27,35 +29,30 @@
             </div>
         </div>
     </section>
+
     <br><br>
     <section>
         <div class="container">
             <div class="about">
-                <table class="w3-table w3-striped w3-border">
-                        <tr>
-                            <th>Username</th>
-                            <th>Seller</th>
-                            <th>Tracking</th>
-                            <th>Amount</th>
-                        </tr>
-                        <tr>
-                            <td>john doe</td>
-                            <td>jane doe</td>
-                            <td>Complete</td>
-                            <td>1,000,000</td>
-                        </tr>
-                        <tr>
-                            <td>Jane doe</td>
-                            <td>lucy doe</td>
-                            <td>pending</td>
-                            <td>5,000,000</td>
-                        </tr>
-                    </table> 
-                <a href="#" class="btn btn-primary">View all</a>
+                <div style="width: 350px; height: 350px; position: relative;">
+                    <canvas id="myPieChart" style="position: absolute; top: 15%; left: 0px; width: 100%; height: 100%;"></canvas>
+                </div>
             </div>
         </div>
     </section>
 
+    <br><br>
+    <section>
+        <div class="container">
+            <div class="about">
+
+            </div>
+        </div>
+    </section>
+
+
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/dashboard.js"></script>
 
     <script type="text/javascript" src="main.js"></script>
     <script src="js/sidebar.js"></script>
@@ -67,5 +64,31 @@
           });
       </script>
     
+
+    <script>
+        var ctx = document.getElementById('myPieChart').getContext('2d');
+        var myPieChart = new Chart(ctx, {
+          type: 'pie',
+          data: {
+            labels: ['Vacant', 'Occupied', 'Government owned'],
+            datasets: [{
+              data: [40, 50, 10],
+              backgroundColor: ['rgb(92, 217, 163)', 'rgb(191, 37, 81)', 'rgb(64, 132, 197)']
+            }]
+          }
+       
+        });
+      </script>
+      
+  
+      <script>
+          fetch('sidebar.html')
+            .then(res => res.text())
+            .then(html => {
+              document.getElementById('sidebar').innerHTML = html;
+            });
+        </script>
+  
+
 </body>
 </html>

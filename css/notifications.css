@@ -1,0 +1,26 @@
+#nav-bar{
+    padding-top: 2px;
+    padding-bottom: 2px;
+    border-bottom: 1px solid #bbb;
+    margin-bottom: 5px;
+    display: flex;
+    gap: 20px;
+    color: rgb(228, 63, 151);
+}
+
+.message-body{
+    border-left: 1px solid rgb(200, 200, 244);
+    padding-left: 10px;
+}
+
+.btn-icon{
+    width: 22px;
+}
+
+.btn-icon-mini{
+    width: 20px;
+}
+
+.btn-icon-mini:hover{
+    color:rgb(55, 58, 241);
+}
