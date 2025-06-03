@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_fdeed57f93fb6d863d138095cf029834 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+</head>
+<body>
+    
+    
+    <h3 align="center" style="font-size:16px"><b>Land Registry System</b></h3>
+    
+            <div class="folium-map" id="map_fdeed57f93fb6d863d138095cf029834" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_fdeed57f93fb6d863d138095cf029834 = L.map(
+                "map_fdeed57f93fb6d863d138095cf029834",
+                {
+                    center: [-13.1339, 27.8493],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 6,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_6c52de355a96d029da8579e189586472 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_6c52de355a96d029da8579e189586472.addTo(map_fdeed57f93fb6d863d138095cf029834);
+        
+    
+            var marker_cluster_a7f94f268f500367cf255bf278981a2e = L.markerClusterGroup(
+                {
+}
+            );
+        
+    
+            var marker_ac91288ec7ebc6ad309c88c68b3d34a0 = L.marker(
+                [-11.3222, 31.3659],
+                {
+}
+            ).addTo(marker_cluster_a7f94f268f500367cf255bf278981a2e);
+        
+    
+            var icon_73dc978818a10c9b59f432d769304ca8 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4080906ebc13aa3aec0c4c5f3c7b8c8b = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_945e09a95f564fd7fa245fdf1d36b855 = $(`<div id="html_945e09a95f564fd7fa245fdf1d36b855" style="width: 100.0%; height: 100.0%;">     <div style='width: 200px;'>         <h4 style='margin-bottom: 5px;'>ShopRite Chinsali</h4>         <p><b>Location:</b> Chinsali</p>         <p><b>Opening Hours:</b> 8am-8pm</p>         <p><b>Services:</b> Grocery</p>         <p style='color: red; font-weight: bold;'><b>Promotions:</b> 10% off on Fridays</p>     </div>     </div>`)[0];
+                popup_4080906ebc13aa3aec0c4c5f3c7b8c8b.setContent(html_945e09a95f564fd7fa245fdf1d36b855);
+            
+        
+
+        marker_ac91288ec7ebc6ad309c88c68b3d34a0.bindPopup(popup_4080906ebc13aa3aec0c4c5f3c7b8c8b)
+        ;
+
+        
+    
+    
+                marker_ac91288ec7ebc6ad309c88c68b3d34a0.setIcon(icon_73dc978818a10c9b59f432d769304ca8);
+            
+    
+            var marker_9e8b23c9eb3f9bdb835edff0ee5945cb = L.marker(
+                [-13.631, 32.64],
+                {
+}
+            ).addTo(marker_cluster_a7f94f268f500367cf255bf278981a2e);
+        
+    
+            var icon_ba2df5220f670065ea7e12241d221e82 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "laptop",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_30a2f0f7a242f518b61f99a5f7a94fba = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_74a6d7ab43b5ce2d73a9198cc8b694ee = $(`<div id="html_74a6d7ab43b5ce2d73a9198cc8b694ee" style="width: 100.0%; height: 100.0%;">     <div style='width: 200px;'>         <h4 style='margin-bottom: 5px;'>Game Stores Chipata</h4>         <p><b>Location:</b> Chipata</p>         <p><b>Opening Hours:</b> 7:30am-9pm</p>         <p><b>Services:</b> Electronics</p>         <p style='color: red; font-weight: bold;'><b>Promotions:</b> Student discounts</p>     </div>     </div>`)[0];
+                popup_30a2f0f7a242f518b61f99a5f7a94fba.setContent(html_74a6d7ab43b5ce2d73a9198cc8b694ee);
+            
+        
+
+        marker_9e8b23c9eb3f9bdb835edff0ee5945cb.bindPopup(popup_30a2f0f7a242f518b61f99a5f7a94fba)
+        ;
+
+        
+    
+    
+                marker_9e8b23c9eb3f9bdb835edff0ee5945cb.setIcon(icon_ba2df5220f670065ea7e12241d221e82);
+            
+    
+            var marker_c4fb44d46bb720ccecb34615889505dd = L.marker(
+                [-16.538, 26.8221],
+                {
+}
+            ).addTo(marker_cluster_a7f94f268f500367cf255bf278981a2e);
+        
+    
+            var icon_202015e5cdcccb5c0ccf7f740f8250b5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_7d06462f3c556dd1416b05691a778d16 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_a7ec954421238a3208fa4cb57c69bd1f = $(`<div id="html_a7ec954421238a3208fa4cb57c69bd1f" style="width: 100.0%; height: 100.0%;">     <div style='width: 200px;'>         <h4 style='margin-bottom: 5px;'>Pick n Pay Choma</h4>         <p><b>Location:</b> Choma</p>         <p><b>Opening Hours:</b> 8am-7pm</p>         <p><b>Services:</b> Grocery</p>         <p style='color: red; font-weight: bold;'><b>Promotions:</b> Buy 2 get 1 free</p>     </div>     </div>`)[0];
+                popup_7d06462f3c556dd1416b05691a778d16.setContent(html_a7ec954421238a3208fa4cb57c69bd1f);
+            
+        
+
+        marker_c4fb44d46bb720ccecb34615889505dd.bindPopup(popup_7d06462f3c556dd1416b05691a778d16)
+        ;
+
+        
+    
+    
+                marker_c4fb44d46bb720ccecb34615889505dd.setIcon(icon_202015e5cdcccb5c0ccf7f740f8250b5);
+            
+    
+            var marker_092620edd649fbc37c54b30cbef00d1d = L.marker(
+                [-14.4584, 28.446],
+                {
+}
+            ).addTo(marker_cluster_a7f94f268f500367cf255bf278981a2e);
+        
+    
+            var icon_09c8852a6859e7892875aa85a34cd334 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a3962837e68a8e3ec74670280544b525 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_7fbece2b121ee9da69219b3e177273c6 = $(`<div id="html_7fbece2b121ee9da69219b3e177273c6" style="width: 100.0%; height: 100.0%;">     <div style='width: 200px;'>         <h4 style='margin-bottom: 5px;'>SPAR Kabwe</h4>         <p><b>Location:</b> Kabwe</p>         <p><b>Opening Hours:</b> 8am-8pm</p>         <p><b>Services:</b> Grocery</p>         <p style='color: red; font-weight: bold;'><b>Promotions:</b> Loyalty points</p>     </div>     </div>`)[0];
+                popup_a3962837e68a8e3ec74670280544b525.setContent(html_7fbece2b121ee9da69219b3e177273c6);
+            
+        
+
+        marker_092620edd649fbc37c54b30cbef00d1d.bindPopup(popup_a3962837e68a8e3ec74670280544b525)
+        ;
+
+        
+    
+    
+                marker_092620edd649fbc37c54b30cbef00d1d.setIcon(icon_09c8852a6859e7892875aa85a34cd334);
+            
+    
+            var marker_3e4f873218429c3fc242b01c086b5c13 = L.marker(
+                [-10.1396, 30.2354],
+                {
+}
+            ).addTo(marker_cluster_a7f94f268f500367cf255bf278981a2e);
+        
+    
+            var icon_8e88de1c64fe7466eb85f90ba68189c9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_67320858f812a46ef5fa70396cf1adb0 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_fb03243a710b22ff8ece2dd4be8bc9d2 = $(`<div id="html_fb03243a710b22ff8ece2dd4be8bc9d2" style="width: 100.0%; height: 100.0%;">     <div style='width: 200px;'>         <h4 style='margin-bottom: 5px;'>Checkers Kasama</h4>         <p><b>Location:</b> Kasama</p>         <p><b>Opening Hours:</b> 8am-7pm</p>         <p><b>Services:</b> Grocery</p>         <p style='color: red; font-weight: bold;'><b>Promotions:</b> Senior citizen discounts</p>     </div>     </div>`)[0];
+                popup_67320858f812a46ef5fa70396cf1adb0.setContent(html_fb03243a710b22ff8ece2dd4be8bc9d2);
+            
+        
+
+        marker_3e4f873218429c3fc242b01c086b5c13.bindPopup(popup_67320858f812a46ef5fa70396cf1adb0)
+        ;
+
+        
+    
+    
+                marker_3e4f873218429c3fc242b01c086b5c13.setIcon(icon_8e88de1c64fe7466eb85f90ba68189c9);
+            
+    
+            var marker_1f4f4897e154bbd7bc541d44bea4e9f6 = L.marker(
+                [-15.3875, 28.3228],
+                {
+}
+            ).addTo(marker_cluster_a7f94f268f500367cf255bf278981a2e);
+        
+    
+            var icon_4eb1704ebeceddc3e55993dc4c6429d8 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e532347751aad00402706fed628835a2 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_3b7293828585ee124bc908a261b56c85 = $(`<div id="html_3b7293828585ee124bc908a261b56c85" style="width: 100.0%; height: 100.0%;">     <div style='width: 200px;'>         <h4 style='margin-bottom: 5px;'>Food Lovers Lusaka</h4>         <p><b>Location:</b> Lusaka</p>         <p><b>Opening Hours:</b> 24 hours</p>         <p><b>Services:</b> Grocery</p>         <p style='color: red; font-weight: bold;'><b>Promotions:</b> Weekend specials</p>     </div>     </div>`)[0];
+                popup_e532347751aad00402706fed628835a2.setContent(html_3b7293828585ee124bc908a261b56c85);
+            
+        
+
+        marker_1f4f4897e154bbd7bc541d44bea4e9f6.bindPopup(popup_e532347751aad00402706fed628835a2)
+        ;
+
+        
+    
+    
+                marker_1f4f4897e154bbd7bc541d44bea4e9f6.setIcon(icon_4eb1704ebeceddc3e55993dc4c6429d8);
+            
+    
+            var marker_dfc03a3129a1f0eddbeed987d4353678 = L.marker(
+                [-10.592, 29.3322],
+                {
+}
+            ).addTo(marker_cluster_a7f94f268f500367cf255bf278981a2e);
+        
+    
+            var icon_7d520738f95b4bf91a1e2270ea64ba68 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4a9f1057cbc872529719dd159a6129f2 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_333f90d39df530f00b58305ca64b1b51 = $(`<div id="html_333f90d39df530f00b58305ca64b1b51" style="width: 100.0%; height: 100.0%;">     <div style='width: 200px;'>         <h4 style='margin-bottom: 5px;'>OK Mansa</h4>         <p><b>Location:</b> Mansa</p>         <p><b>Opening Hours:</b> 8am-6pm</p>         <p><b>Services:</b> Grocery</p>         <p style='color: red; font-weight: bold;'><b>Promotions:</b> Monthly sales</p>     </div>     </div>`)[0];
+                popup_4a9f1057cbc872529719dd159a6129f2.setContent(html_333f90d39df530f00b58305ca64b1b51);
+            
+        
+
+        marker_dfc03a3129a1f0eddbeed987d4353678.bindPopup(popup_4a9f1057cbc872529719dd159a6129f2)
+        ;
+
+        
+    
+    
+                marker_dfc03a3129a1f0eddbeed987d4353678.setIcon(icon_7d520738f95b4bf91a1e2270ea64ba68);
+            
+    
+            var marker_1cc2e50f7a2cd6eada7ba5442051796d = L.marker(
+                [-15.2489, 23.1261],
+                {
+}
+            ).addTo(marker_cluster_a7f94f268f500367cf255bf278981a2e);
+        
+    
+            var icon_c3c44064121a75f709a121225444d5fb = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0036660b682531bddea6129421c53fcb = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_7f6ed733dd81d474b271059b6f919863 = $(`<div id="html_7f6ed733dd81d474b271059b6f919863" style="width: 100.0%; height: 100.0%;">     <div style='width: 200px;'>         <h4 style='margin-bottom: 5px;'>Usave Mongu</h4>         <p><b>Location:</b> Mongu</p>         <p><b>Opening Hours:</b> 8am-6pm</p>         <p><b>Services:</b> Grocery</p>         <p style='color: red; font-weight: bold;'><b>Promotions:</b> Clearance deals</p>     </div>     </div>`)[0];
+                popup_0036660b682531bddea6129421c53fcb.setContent(html_7f6ed733dd81d474b271059b6f919863);
+            
+        
+
+        marker_1cc2e50f7a2cd6eada7ba5442051796d.bindPopup(popup_0036660b682531bddea6129421c53fcb)
+        ;
+
+        
+    
+    
+                marker_1cc2e50f7a2cd6eada7ba5442051796d.setIcon(icon_c3c44064121a75f709a121225444d5fb);
+            
+    
+            var marker_e65105c565522aac12a5e64c62f42c1d = L.marker(
+                [-12.8308, 28.211],
+                {
+}
+            ).addTo(marker_cluster_a7f94f268f500367cf255bf278981a2e);
+        
+    
+            var icon_bfa99b789ade9670c4e7e43d6f728f4d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "industry",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1fa648a225a94387cd27515ff514c0bd = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_5bdfd72ffb77013da4236e7f765c82b4 = $(`<div id="html_5bdfd72ffb77013da4236e7f765c82b4" style="width: 100.0%; height: 100.0%;">     <div style='width: 200px;'>         <h4 style='margin-bottom: 5px;'>Makro Ndola</h4>         <p><b>Location:</b> Ndola</p>         <p><b>Opening Hours:</b> 7am-10pm</p>         <p><b>Services:</b> Wholesale</p>         <p style='color: red; font-weight: bold;'><b>Promotions:</b> Bulk discounts</p>     </div>     </div>`)[0];
+                popup_1fa648a225a94387cd27515ff514c0bd.setContent(html_5bdfd72ffb77013da4236e7f765c82b4);
+            
+        
+
+        marker_e65105c565522aac12a5e64c62f42c1d.bindPopup(popup_1fa648a225a94387cd27515ff514c0bd)
+        ;
+
+        
+    
+    
+                marker_e65105c565522aac12a5e64c62f42c1d.setIcon(icon_bfa99b789ade9670c4e7e43d6f728f4d);
+            
+    
+            var marker_a563d53bea395365e95fd57dddf5ba2e = L.marker(
+                [-12.244, 25.7481],
+                {
+}
+            ).addTo(marker_cluster_a7f94f268f500367cf255bf278981a2e);
+        
+    
+            var icon_e5def2de614ee31accf61f321098c812 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "tshirt",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_64fd35a3cf990497a6b289a4b4194dba = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_0ed203fe63d56e98c66f223ee43d6b06 = $(`<div id="html_0ed203fe63d56e98c66f223ee43d6b06" style="width: 100.0%; height: 100.0%;">     <div style='width: 200px;'>         <h4 style='margin-bottom: 5px;'>Woolworths Solwezi</h4>         <p><b>Location:</b> Solwezi</p>         <p><b>Opening Hours:</b> 8am-8pm</p>         <p><b>Services:</b> Clothing</p>         <p style='color: red; font-weight: bold;'><b>Promotions:</b> Seasonal sales</p>     </div>     </div>`)[0];
+                popup_64fd35a3cf990497a6b289a4b4194dba.setContent(html_0ed203fe63d56e98c66f223ee43d6b06);
+            
+        
+
+        marker_a563d53bea395365e95fd57dddf5ba2e.bindPopup(popup_64fd35a3cf990497a6b289a4b4194dba)
+        ;
+
+        
+    
+    
+                marker_a563d53bea395365e95fd57dddf5ba2e.setIcon(icon_e5def2de614ee31accf61f321098c812);
+            
+    
+            marker_cluster_a7f94f268f500367cf255bf278981a2e.addTo(map_fdeed57f93fb6d863d138095cf029834);
+        
+    
+            var layer_control_3855c7f75b19c6a7b28df7bff88ebb70_layers = {
+                base_layers : {
+                    "openstreetmap" : tile_layer_6c52de355a96d029da8579e189586472,
+                },
+                overlays :  {
+                    "macro_element_a7f94f268f500367cf255bf278981a2e" : marker_cluster_a7f94f268f500367cf255bf278981a2e,
+                },
+            };
+            let layer_control_3855c7f75b19c6a7b28df7bff88ebb70 = L.control.layers(
+                layer_control_3855c7f75b19c6a7b28df7bff88ebb70_layers.base_layers,
+                layer_control_3855c7f75b19c6a7b28df7bff88ebb70_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": true,
+  "autoZIndex": true,
+}
+            ).addTo(map_fdeed57f93fb6d863d138095cf029834);
+
+        
+</script>
+
+</html>
