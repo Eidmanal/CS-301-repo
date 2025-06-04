@@ -98,24 +98,14 @@
 
     <script type="text/javascript" src="main.js"></script>
     <script src="js/sidebar.js"></script>
+    
     <script>
         fetch('sidebar.html')
           .then(res => res.text())
           .then(html => {
             document.getElementById('sidebar').innerHTML = html;
           });
-      </script>
-    
-  
-  
-      <script>
-          fetch('sidebar.html')
-            .then(res => res.text())
-            .then(html => {
-              document.getElementById('sidebar').innerHTML = html;
-            });
-        </script>
-  
+      </script>  
 
 </body>
 </html>

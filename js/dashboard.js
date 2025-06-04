@@ -1,15 +1,18 @@
 $(document).ready(function(){
 
 
-  var ctx = document.getElementById('comboChart').getContext('2d');
-  var comboChart = new Chart(ctx, {
+let comboChart;
+
+function initComboChart() {
+  const ctx = document.getElementById('comboChart').getContext('2d');
+  comboChart = new Chart(ctx, {
     data: {
-      labels: ['01 Jan', '02 Jan', '03 Jan', '04 Jan', '05 Jan', '06 Jan', '07 Jan', '08 Jan', '09 Jan', '10 Jan', '11 Jan', '12 Jan'],
+      labels: [], // initially empty
       datasets: [
         {
           type: 'bar',
           label: 'Private purchases',
-          data: [300, 400, 500, 600, 200, 300, 250, 400, 550, 650, 300, 200],
+          data: [],
           backgroundColor: 'rgba(54, 162, 235, 0.7)',
           borderRadius: 4,
           barThickness: 20
@@ -17,14 +20,15 @@ $(document).ready(function(){
         {
           type: 'line',
           label: 'Government purchases',
-          data: [20, 25, 30, 28, 35, 38, 40, 33, 29, 31, 25, 20],
+          data: [],
           borderColor: 'rgba(0, 200, 83, 1)',
           backgroundColor: 'rgba(0, 200, 83, 0.1)',
           tension: 0.3,
           fill: false,
           pointBackgroundColor: 'white',
           pointBorderColor: 'rgba(0, 200, 83, 1)',
-          pointRadius: 5
+          pointRadius: 5,
+          yAxisID: 'y1'
         }
       ]
     },
@@ -62,7 +66,22 @@ $(document).ready(function(){
       }
     }
   });
+}
 
+  function updateComboChart(labels, privateData, governmentData) {
+    comboChart.data.labels = labels;
+    comboChart.data.datasets[0].data = privateData;
+    comboChart.data.datasets[1].data = governmentData;
+    comboChart.update();
+  }
+
+  initComboChart();
+
+    updateComboChart(
+    ['01 Jan', '02 Jan', '03 Jan', '04 Jan'],
+    [300, 400, 250, 500],
+    [20, 25, 22, 30]
+  );
 
   var ctx = document.getElementById('myPieChart').getContext('2d');
   var myPieChart = new Chart(ctx, {
