@@ -99,6 +99,7 @@
 
 <script>
   const urlParams = new URLSearchParams(window.location.search);
+
   if (urlParams.get('registered') === '1') {
     const alertBox = document.createElement('div');
     alertBox.className = 'alert alert-info alert-dismissible fade show mb-0 rounded-0 text-center';
@@ -109,19 +110,13 @@
     `;
     document.getElementById('alert-container').appendChild(alertBox);
 
-    // Auto-dismiss after 3.5 seconds
     setTimeout(() => {
       const alert = bootstrap.Alert.getOrCreateInstance(alertBox);
       alert.close();
     }, 3500);
   }
-</script>
 
-<div class="container mt-3" id="alert-container" style="position: fixed; bottom: 10px; left: 0; width: 100%; z-index: 1050;"></div>
-
-<script>
-  const urlParamsLogin = new URLSearchParams(window.location.search);
-  if (urlParamsLogin.get('loggedin') === '1') {
+  if (urlParams.get('loggedin') === '1') {
     const alertBox = document.createElement('div');
     alertBox.className = 'alert alert-success alert-dismissible fade show w-100 rounded-0 mb-0';
     alertBox.role = 'alert';
