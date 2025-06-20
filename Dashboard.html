@@ -93,6 +93,53 @@
     </section>
 
 
+<div id="alert-container" style="position: fixed; bottom: 0; left: 0; width: 100%; z-index: 1050;">
+</div>
+
+
+<script>
+  const urlParams = new URLSearchParams(window.location.search);
+  if (urlParams.get('registered') === '1') {
+    const alertBox = document.createElement('div');
+    alertBox.className = 'alert alert-info alert-dismissible fade show mb-0 rounded-0 text-center';
+    alertBox.role = 'alert';
+    alertBox.innerHTML = `
+      <strong>Registered successfully!</strong>
+      <button type="button" class="btn-close position-absolute end-0 me-3" data-bs-dismiss="alert" aria-label="Close"></button>
+    `;
+    document.getElementById('alert-container').appendChild(alertBox);
+
+    // Auto-dismiss after 3.5 seconds
+    setTimeout(() => {
+      const alert = bootstrap.Alert.getOrCreateInstance(alertBox);
+      alert.close();
+    }, 3500);
+  }
+</script>
+
+<div class="container mt-3" id="alert-container" style="position: fixed; bottom: 10px; left: 0; width: 100%; z-index: 1050;"></div>
+
+<script>
+  const urlParamsLogin = new URLSearchParams(window.location.search);
+  if (urlParamsLogin.get('loggedin') === '1') {
+    const alertBox = document.createElement('div');
+    alertBox.className = 'alert alert-success alert-dismissible fade show w-100 rounded-0 mb-0';
+    alertBox.role = 'alert';
+    alertBox.innerHTML = `
+      <div class="text-center">Logged in successfully!</div>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    `;
+    document.getElementById('alert-container').appendChild(alertBox);
+
+    setTimeout(() => {
+      const alert = bootstrap.Alert.getOrCreateInstance(alertBox);
+      alert.close();
+    }, 3000);
+  }
+</script>
+
+
+
     <script src="js/jquery-3.7.1.min.js"></script>
     <script src="js/dashboard.js"></script>
 
@@ -106,6 +153,9 @@
             document.getElementById('sidebar').innerHTML = html;
           });
       </script>  
+
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
 
 </body>
 </html>

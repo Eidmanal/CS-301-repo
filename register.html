@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Register</title>
+  <link rel="stylesheet" href="css/bootstrap-5.3.5-dist/bootstrap-5.3.5-dist/css/bootstrap.min.css">
+  <style>
+    .register-box {
+      max-width: 400px;
+      margin: 10vh auto;
+      padding: 2rem;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="register-box">
+      <h2 class="text-center mb-4">Register</h2>
+      <form action="/register" method="POST">
+        <input name="full_name" class="form-control mb-3" placeholder="Full Name" required>
+        <input name="email" type="email" class="form-control mb-3" placeholder="Email" required>
+        <input type="password" name="password" class="form-control mb-3" placeholder="Password" required>
+        <input name="phone_number" class="form-control mb-3" placeholder="Phone Number" required>
+        <button type="submit" class="btn btn-success w-100">Register</button>
+      </form>
+      <p class="text-center mt-3">
+        Already have an account? <a href="/">Login</a>
+      </p>
+    </div>
+  </div>
+</body>
+</html>
