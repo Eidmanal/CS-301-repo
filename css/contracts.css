@@ -1,0 +1,56 @@
+body {
+  background: linear-gradient(-45deg, #88e4fd, #fafeff, #87ffd7, #ff7ba7);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #212529;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.contract-box {
+  width: 100%;
+  max-width: 460px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  background-color: #ffffff;
+}
+
+.btn {
+  border-radius: 8px;
+}
+
+input.form-control {
+  border-radius: 6px;
+  box-shadow: none;
+}
+
+#status {
+  font-size: 0.95rem;
+  min-height: 24px;
+}
+
+.status-text.success {
+  color: #28a745;
+}
+
+.status-text.error {
+  color: #dc3545;
+}
+
+.scroll-box {
+  max-height: 200px;
+  overflow-y: auto;
+  padding: 10px;
+  border: 1px dashed #ccc;
+  background: #fafafa;
+  border-radius: 8px;
+}
+
+.blockchain h6 {
+  font-weight: bold;
+}
