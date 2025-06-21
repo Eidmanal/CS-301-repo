@@ -1,0 +1,43 @@
+/* blockchain.css */
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Noto Sans', sans-serif;
+  background-color: #f8f9fa;
+}
+
+/* Layout fixes */
+#sidebar {
+  height: 100vh;
+  overflow-y: auto;
+  border-right: 1px solid #ddd;
+}
+
+main {
+  padding: 2rem;
+  background-color: #f8f9fa;
+  min-height: 100vh;
+}
+
+/* Input groups */
+input.form-control {
+  max-width: 400px;
+  margin-bottom: 0.75rem;
+}
+
+button.btn {
+  margin-right: 1rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Blockchain card styling */
+#blocks .card {
+  margin-bottom: 1rem;
+  background: white;
+  border: 1px solid #dee2e6;
+  border-radius: 0.5rem;
+  padding: 1rem;
+}

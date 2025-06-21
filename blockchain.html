@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Blockchain</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/blockchain.css" />
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="d-flex">
+        <nav id="sidebar" class="bg-light border-end vh-100" style="width: 280px; min-width: 280px;">
+        </nav>
+
+        <main class="flex-grow-1 p-4">
+            <h1>Blockchain</h1>
+
+            <section id="create-transaction">
+                <h3>Create Transaction</h3>
+                <div class="input-group">
+                    <input type="text" id="publicKey" class="form-control" placeholder="Your Public Key" />
+                </div>
+                <div class="input-group">
+                    <input type="text" id="privateKey" class="form-control" placeholder="Your Private Key" />
+                </div>
+                <div class="input-group">
+                    <input type="text" id="toAddress" class="form-control" placeholder="Recipient Public Key" />
+                </div>
+                <div class="input-group">
+                    <input type="number" id="amount" class="form-control" placeholder="Amount" />
+                </div>
+                <button class="btn btn-primary" onclick="createTransaction()">
+                    Send Transaction
+                </button>
+            </section>
+
+            <section id="mine-section">
+                <h3>Mine Pending Transactions</h3>
+                <button class="btn btn-success" onclick="mineBlock()">Mine Block</button>
+            </section>
+
+            <section id="balance-section">
+                <h3>Check Balance</h3>
+                <button class="btn btn-info mb-2" onclick="checkBalance()">Check Balance</button>
+                <div id="balance"></div>
+            </section>
+
+            <section id="blockchain-section">
+                <h3>Blockchain</h3>
+                <button class="btn btn-secondary mb-3" onclick="fetchBlocks()">Refresh Chain</button>
+                <div id="blocks"></div>
+            </section>
+        </main>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        const API_URL = 'http://localhost:3001';
+
+        async function createTransaction() {
+            const fromAddress = document.getElementById('publicKey').value.trim();
+            const toAddress = document.getElementById('toAddress').value.trim();
+            const amount = parseFloat(document.getElementById('amount').value);
+            const privateKey = document.getElementById('privateKey').value.trim();
+
+            if (!fromAddress || !toAddress || !amount || !privateKey) {
+                alert('Please fill all transaction fields.');
+                return;
+            }
+
+            const res = await fetch(API_URL + '/transaction', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ fromAddress, toAddress, amount, privateKey }),
+            });
+            alert(await res.text());
+        }
+
+        async function mineBlock() {
+            const minerAddress = document.getElementById('publicKey').value.trim();
+            if (!minerAddress) {
+                alert('Enter your public key to mine.');
+                return;
+            }
+            const res = await fetch(API_URL + '/mine', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ minerAddress }),
+            });
+            alert(await res.text());
+            fetchBlocks();
+            checkBalance();
+        }
+
+        async function checkBalance() {
+            const address = document.getElementById('publicKey').value.trim();
+            if (!address) {
+                alert('Enter your public key.');
+                return;
+            }
+            const res = await fetch(API_URL + '/balance/' + address);
+            const data = await res.json();
+            document.getElementById('balance').innerText = `Balance: ${data.balance}`;
+        }
+
+        async function fetchBlocks() {
+            const res = await fetch(API_URL + '/blocks');
+            const chain = await res.json();
+
+            const blocksDiv = document.getElementById('blocks');
+            blocksDiv.innerHTML = '';
+
+            chain.forEach((block) => {
+                const blockEl = document.createElement('div');
+                blockEl.className = 'card mb-3 p-3';
+                blockEl.innerHTML = `
+          <strong>Index:</strong> ${block.index} <br />
+          <strong>Timestamp:</strong> ${new Date(block.timestamp).toLocaleString()} <br />
+          <strong>Previous Hash:</strong> ${block.previousHash} <br />
+          <strong>Hash:</strong> ${block.hash} <br />
+          <strong>Nonce:</strong> ${block.nonce} <br />
+          <strong>Transactions:</strong>
+          <ul>
+            ${block.transactions
+                        .map(
+                            (tx) =>
+                                `<li>From: ${tx.fromAddress}<br />To: ${tx.toAddress}<br />Amount: ${tx.amount}</li>`
+                        )
+                        .join('')}
+          </ul>
+        `;
+                blocksDiv.appendChild(blockEl);
+            });
+        }
+
+        // Load the blockchain on page load
+        fetchBlocks();
+
+        // Load sidebar content from sidebar.html dynamically
+        fetch('sidebar.html')
+            .then((res) => res.text())
+            .then((html) => {
+                document.getElementById('sidebar').innerHTML = html;
+            });
+    </script>
+</body>
+
+</html>
